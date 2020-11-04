@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证提示信息提示</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var patt = /^\w{5,12}$/;
+            var spanObj = document.getElementById("spanid");
+            var username = document.getElementById("username");
+            // innerHTML和innerText返回首尾标签中的文字
+            var btnObj = document.getElementById("btn");
+            btnObj.onclick = function () {
+                if (patt.test(username.value)){
+                    spanObj.innerHTML = "用户名语法正确";
+                } else {
+                    spanObj.innerHTML = "用户名语法错误!";
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+    用户名 : <input id="username" type="text"/>
+    <span id="spanid" style="color: red">提示信息</span>
+    <input id="btn" type="button" value="验证"/>
+</body>
+</html>

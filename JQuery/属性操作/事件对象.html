@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            border: 5px blue solid;
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        //原生javascript获取事件对象
+        // window.onload = function () {
+        //     document.getElementById("areaDiv").onclick = function(event){
+        //         console.log(event);
+        //     }
+        // }
+        //jQuery获取事件对象
+        $(function () {
+          // $("#showMsg").click(function (event) {
+          //     console.log(event);
+          // });
+            $("#showMsg").bind("mouseover mouseout", function (event) {
+                if (event.type == "mouseover") {
+                    console.log("鼠标移入事件");
+                } else if (event.type == "mouseout") {
+                    console.log("鼠标移出事件");
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="areaDiv"></div>
+    <div id="showMsg"></div>
+</body>
+</html>

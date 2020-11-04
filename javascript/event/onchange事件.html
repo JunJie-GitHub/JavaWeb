@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onchange</title>
+    <script>
+        function onchangefn() {
+            alert("静态onchange内容改变事件")
+        }
+        window.onload = function () {
+            var onchangefn = document.getElementById("school")
+            onchangefn.onchange = function () {
+                alert("动态加载onchange内容改变事件")
+            }
+        }
+    </script>
+</head>
+<body>
+    用户名 : <input type="text" onchange="onchangefn()"/><br>
+    学校 : <select id="school">
+        <option>南京邮电大学通达学院</option>
+        <option>扬州大学</option>
+        <option>清华大学</option>
+    </select>
+</body>
+</html>

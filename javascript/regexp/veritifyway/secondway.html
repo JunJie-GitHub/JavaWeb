@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证提示信息</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var patt = /^\w{5,12}$/;
+            var spanObj = document.getElementById("spanid");
+            var username = document.getElementById("username");
+            // innerHTML可返回或设置首尾标签中的内容
+            var btnObj = document.getElementById("btn");
+            btnObj.onclick = function () {
+                if (patt.test(username.value)){
+                    // "\"为转义字符, 双引号前添加
+                    spanObj.innerHTML = "<img src=\"../../../pic/check.png\" width=\"15\"/>";
+                } else {
+                    spanObj.innerHTML = "<img src=\"../../../pic/cross.png\" width=\"15\"/>";
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+用户名 : <input id="username" type="text"/>
+<span id="spanid"> <img src="../../../pic/circle.png" width="15"/> </span>
+<input id="btn" type="button" value="验证"/>
+</body>
+</html>

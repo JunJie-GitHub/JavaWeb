@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选项框操作</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(function (){
+            //给全选绑定单击事件
+            $("#all").click(function () {
+                $(":checkbox").prop("checked", true);
+            });
+            //给全不选绑定单击事件
+            $("#none").click(function () {
+                $(":checkbox").prop("checked", false);
+            });
+            //给反选绑定单击事件
+            $("#rever").click(function () {
+                $(":checkbox[name='item']").each(function () {
+                    this.checked = !this.checked;
+                });
+                //检查是否全选了
+                var allcount = $(":checkbox[name='item']").length;
+                var checkcount = $(":checkbox[name='item']:checked").length;
+                // if (allcount==checkcount){
+                //     $("#change").prop("checked", true);
+                // } else {
+                //     $("#change").prop("checked", false);
+                // }
+                $("#change").prop("checked", checkcount==allcount);
+            });
+            //提交单击事件
+            $("#submid").click(function () {
+                //获取选中的复选款
+                $(":checkbox[name='item']:checked").each(function () {
+                    alert(this.value);
+                });
+            });
+            //给全选/全不选绑定单击事件
+            $("#change").click(function () {
+                //获取选中的复选款
+                $(":checkbox[name='item']").prop("checked", this.checked);
+            });
+            //给所有球类绑定单击事件
+            $(":checkbox[name='item']").click(function () {
+                //检查是否全选了
+                var allcount = $(":checkbox[name='item']").length;
+                var checkcount = $(":checkbox[name='item']:checked").length;
+                $("#change").prop("checked", checkcount==allcount);
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="" method="get">
+        你爱好的运动是?<input id="change" type="checkbox"/>全选/全不选<br/>
+        <input type="checkbox" name="item" value="足球"/>足球
+        <input type="checkbox" name="item" value="篮球"/>篮球
+        <input type="checkbox" name="item" value="羽毛球"/>羽毛球
+        <input type="checkbox" name="item" value="乒乓球"/>乒乓球<br/>
+        <input id="all" type="button" value="全选"/>
+        <input id="none" type="button" value="全不选"/>
+        <input id="rever" type="button" value="反选"/>
+        <input id="submid" type="submit" value="提交"/>
+    </form>
+</body>
+</html>

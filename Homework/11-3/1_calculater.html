@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            //计算按钮单击事件
+            $("#btn").click(function () {
+                var val1 = $("#val1").val();
+                var val2 = $("#val2").val();
+                var sign = $("#sel").val();     //获取select的value
+                if (sign=="+"){
+                    $("#res").val(Number(val1)+Number(val2));
+                }else if(sign=="-"){
+                    $("#res").val(Number(val1)-Number(val2));
+                }else if(sign=="*"){
+                    $("#res").val(Number(val1)*Number(val2));
+                }else if(sign=="/"){
+                    $("#res").val(Number(val1)/Number(val2));
+                }
+
+            });
+        })
+    </script>
+</head>
+<body>
+    <div align="center">
+        <input id="val1" type="text"/>
+        <select id="sel">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input id="val2" type="text"/> =
+        <input id="res" type="text"/>
+    </div></br>
+    <input id="btn" type="button" align="center" value="计算"/>
+</body>
+</html>

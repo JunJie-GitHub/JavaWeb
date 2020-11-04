@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onblur</title>
+    <script type="text/javascript">
+        function onblurfn() {
+            //console是控制台对象, 向浏览器控制太打印输出, 用于测试
+            console.log("静态注册onblur事件");
+        }
+        //动态注册onblur事件
+        window.onload = function () {
+            var onblurfn = document.getElementById("password");
+            onblurfn.onblur = function(){
+                alert(onblurfn);
+            }
+        }
+    </script>
+</head>
+<body>
+    用户名 : <input type="text" onblur="onblurfn()"/><br>
+    密码 : <input id="password"  type="text"/><br>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS样式操作</title>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        div.background{
+            background-color: brown;
+        }
+        div.blueBorder{
+            border: 5px blue solid;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var $divEle = $('div:first');
+            //addClass()单击事件
+            $("#add").click(function () {
+              $divEle.addClass('background');
+            });
+            //remove()单击事件
+            $("#remove").click(function () {
+              $divEle.remove();
+            });
+            //toggleClass()单击事件
+            $("#toggle").click(function () {
+                $divEle.toggleClass('background');
+            });
+            //offset()单击事件
+            $("#offset").click(function () {
+                var pos = $divEle.offset();
+                // console.log(pos);    //输出坐标
+                $divEle.offset({        //设置坐标
+                    top:200,
+                    left:50
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td>
+                <div >1</div>
+            </td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <input id="add" type="button" value="addClass()"/>
+    <input id="remove" type="button" value="removeClass()"/>
+    <input id="toggle" type="button" value="toggleClass()"/>
+    <input id="offset" type="button" value="offset()"/>
+
+</body>
+</html>

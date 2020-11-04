@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单弹出</title>
+    <style>
+        .menu{
+            width: 100px;
+            height: 40px;
+            font-size: 20px ;
+            background-color: #207294;
+            color: white;
+            border: 0px;
+        }
+        [name="item"]{
+            width: 100px;
+            height: 40px;
+            font-size: 20px ;
+            background-color: #918e94;
+            color: white;
+            border: 0px;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //文件按钮单击事件
+           $(".menu:eq(0)").click(function () {
+               // console.log("文件");
+               $("[name='item']").toggle();
+           });
+           //编辑按钮单击事件
+            $(".menu:eq(1)").click(function () {
+                //console.log("编辑");
+            });
+        });
+    </script>
+</head>
+<body>
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <input class = "menu", type="button" value="文件"/>
+                <input class = "menu" type="button" value="编辑"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="item" type="button" value="打开"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="item" type="button" value="新建"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="item" type="button" value="保存"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="item" type="button" value="关闭"/>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

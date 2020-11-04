@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证输入用户名</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var userObj = document.getElementById("username");
+            var btnObj = document.getElementById("test");
+            btnObj.onclick = function(){
+                var usernameText = userObj.value;    //读取输入框内容
+                var patt = /^\w{5,12}$/;     //正则表达式
+                if (patt.test(usernameText)) {  //验证用户名是否匹配正则表达式
+                    alert("用户名合法");
+                } else {
+                    alert("用户名不合法");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    用户名 : <input id="username" type="text"/>
+    <input id="test" type="button" value="验证"/>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+    <div id="div1">
+        <form action="", method="get">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h3>用户注册</h3>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>用户名称 : </td>
+                    <td><input id="username" class="item" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>登录密码 : </td>
+                    <td><input id="password" class="item" type="password"/></td>
+                </tr>
+                <tr>
+                    <td>重复密码 : </td>
+                    <td><input id="password2" class="item" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>电子邮箱 : </td>
+                    <td><input id="email" class="item" type="text"/></td>
+                </tr>
+                <tr>
+                    <td>性  别 : </td>
+                    <td>
+                        <input name="sex" class="item" checked="checked" type="radio"/>男
+                        <input name="sex" class="item" type="radio"/>女
+                    </td>
+                </tr>
+                <tr>
+                    <td>职  业 : </td>
+                    <td>
+                        <select class="item">
+                            <option>学生</option>
+                            <option>老板</option>
+                            <option>白领</option>
+                            <option>乞丐</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>爱  好 : </td>
+                    <td>
+                        <textarea class="item" rows="6"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td><input id="signup" type="submit" value="注册"/></td>
+                    <td><input id="signin" type="submit" value="登录"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
